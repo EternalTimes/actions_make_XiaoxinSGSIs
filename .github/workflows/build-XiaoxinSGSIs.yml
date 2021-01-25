@@ -58,7 +58,7 @@ jobs:
            sudo bash setup.sh
            
        - name: Download Rom
-         run: sudo wget -c ${{ steps.var.outputs.rom_url }} -O SGSI-build-tool/10/tmp/${{ steps.var.outputs.rom_name }}
+         run: sudo wget -c ${{ steps.var.outputs.rom_url }} -O SGSI-build-tool-11/11/tmp/${{ steps.var.outputs.rom_name }}
        
        - name: Build Super SGSI
          if: steps.var.outputs.make_super == 'true'
@@ -104,7 +104,7 @@ jobs:
             
        - name: Generate SGSI
          run: |
-           rm -rf SGSI-build-tool-11/11/SGSI.sh SGSI-build-tool/10/makeimg.sh SGSI-build-tool-11/11/bin/mke2fs SGSI-build-tool-11/11/bin/e2fsdroid SGSI-build-tool-11/11/dynamic_SGSI.sh SGSI-build-tool-11/11/oppo.sh SGSI-build-tool-11/11/make.sh
+           rm -rf SGSI-build-tool-11/11/SGSI.sh SGSI-build-tool-11/11/makeimg.sh SGSI-build-tool-11/11/bin/mke2fs SGSI-build-tool-11/11/bin/e2fsdroid SGSI-build-tool-11/11/dynamic_SGSI.sh SGSI-build-tool-11/11/oppo.sh SGSI-build-tool-11/11/make.sh
            mv make/makeimg.sh make/SGSI.sh make/dynamic_SGSI.sh make/oppo.sh make/make.sh SGSI-build-tool-11/11/
            mv bin/mke2fs bin/e2fsdroid SGSI-build-tool-11/11/bin/
            cd SGSI-build-tool-11/11
@@ -123,7 +123,7 @@ jobs:
            sudo mv Patch1.zip Patch2.zip Patch3.zip SGSI-build-tool-11/11/SGSI/
 
        - name: 7z SGSI
-         run: 7za a -t7z -r ${{ steps.var.outputs.pack_sgsi }} SGSI-build-tool/10/SGSI/*
+         run: 7za a -t7z -r ${{ steps.var.outputs.pack_sgsi }} SGSI-build-tool-11/11/SGSI/*
 
        - name: Upload SGSI to WeTransfer
          if: steps.var.outputs.upload_transfer == 'true'
